@@ -1,0 +1,27 @@
+{{>header}}
+{{>navbar}}
+
+ <section class="my-5 container text-center">
+        <h3>Add Task</h3>
+        <form method="post" class="mx-auto" style="width: 400px;">
+            <div class="mb-3">
+                <input name="name" placeholder="Name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <input name="title" placeholder="Title" class="form-control">
+            </div>
+         <div class="mb-3">
+                <input name="content" placeholder="Content" class="form-control">
+            </div>
+           <label for="status">Status : &nbsp;</label>
+        <input type="radio" name="status" id="status" value="true" required /> &nbsp;<span class="text-success">Active</span> 
+        &nbsp; <input type="radio" name="status" id="status" value="false" required /> &nbsp;<span class="text-danger">No Active</span> 
+        <br>
+
+          <div class="mt-4">
+                <button class="btn btn-dark px-3">Add Task</button>
+            </div>
+        </form>
+      </section>
+
+{{>footer}}

@@ -1,0 +1,45 @@
+{{>header}}
+{{>navbar}}
+
+<section class="my-5 container">
+    <div class="row">
+      
+        {{#each AllTasks}}
+        {{#if this.status}}
+        <div class="col-4 mb-4">
+        <div class="card bg-success" style="box-shadow: 1px 2px 10px #000;">
+        <div class="card-body">
+
+            <h5 class="card-title text-center text-white "> {{this.name}}</h5>
+            <h3 class="card-title text-center text-white "> {{this.title}}</h3>
+            <p class="card-text text-center text-light">{{this.content}}</p>
+            <div class=" d-flex justify-content-evenly">
+                <a href="/show/{{this.id}}" class="btn" style= "background: white;">Show</a>
+                <a  href="/change/{{this.id}}" class="btn btn-danger">Change Status</a>
+                <a href="/delete/{{this.id}}" class="btn btn-warning">Delete</a>
+            </div>
+        </div>
+        </div>
+        </div>
+    {{else}}
+      <div class="col-4 mb-4">
+        <div class="card" style="background: #F0246F; box-shadow: 1px 2px 10px #000;">
+        <div class="card-body">
+            <h5 class="card-title text-center text-white "> {{this.name}}</h5>
+            <h3 class="card-title  text-center text-white ">{{this.title}}</h3>
+            <p class="card-text text-center text-white ">{{this.content}}</p>
+            <div class=" d-flex justify-content-evenly">
+                <a href="/show/{{this.id}}" class="btn" style= "background: white;">show</a>
+                <a  href="/change/{{this.id}}" class="btn btn-success">change status</a>
+                <a href="/delete/{{this.id}}" class="btn btn-warning">delete</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    {{/if}}
+    {{/each}}
+       
+    </div>
+</section>
+
+{{>footer}}
