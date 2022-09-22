@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <input type="text"  class="form-control" placeholder="Search"  #data  (input)="filter(data.value)">
+        <br><br>
+        <div class="col-12 col-md-4 mt-3" *ngFor="let item of search; let first=first ;let last = last; let index=index ; let odd=odd ; let even=even">
+            <div class="card" [ngClass]="{'bg-info' : odd , 'bg-danger' : even , 'text-white' : first}"  > 
+                <img src="assets/images/R.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-title">{{item.title}}</h1>
+                    <h5> Index = {{index}}</h5>
+                    <h5>First Item ? {{first}}</h5>
+                    <h5>Last Item ? {{last}}</h5>
+                    <h5>Even ? {{even}}</h5>
+                    <h5>Odd ? {{odd}}</h5>
+                    <p class="card-text">{{item.body}}</p>
+                    <a href="#" class="btn btn-dark text-white">Read More..</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
